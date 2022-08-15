@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mycalc:
+  frontend:
     build: .
     environment:
       - NODE_ENV=development
@@ -10,3 +10,19 @@ services:
     ports:
       - '3000:3000'
     tty: true
+
+
+# admin-web-frontend.vite:
+#     build: ./admin-web-frontend
+#     ports:
+#       - "${DOCKER_ADMIN_WEB_FRONTEND_HOST_PORT}:3000"
+#     networks:
+#       - frontend
+#       - backend
+#     command:
+#       - dev
+#       - "--"
+#       - "--host"
+#       - "0.0.0.0"
+#     volumes:
+#       - ./admin-web-frontend:/home/node/app
