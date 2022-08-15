@@ -5,24 +5,8 @@ services:
     environment:
       - NODE_ENV=development
     volumes:
-      - ./:/usr/src/app/mycalc
+      - ./:/usr/src/app/
     # command: sh -c 'cd mycalc && yarn start'
     ports:
       - '3000:3000'
     tty: true
-
-
-# admin-web-frontend.vite:
-#     build: ./admin-web-frontend
-#     ports:
-#       - "${DOCKER_ADMIN_WEB_FRONTEND_HOST_PORT}:3000"
-#     networks:
-#       - frontend
-#       - backend
-#     command:
-#       - dev
-#       - "--"
-#       - "--host"
-#       - "0.0.0.0"
-#     volumes:
-#       - ./admin-web-frontend:/home/node/app
