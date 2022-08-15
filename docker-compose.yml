@@ -8,5 +8,5 @@ services:
       - ./:/usr/src/app/
     # command: sh -c 'cd mycalc && yarn start'
     ports:
-      - '3000:3001'
+      - '3001:3000'
     tty: true
