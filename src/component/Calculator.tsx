@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { calculate, State } from "../logic/calculate";
+import { ButtonCode, calculate, State } from "../logic/calculate";
 import ButtonPanel from "./ButtonPanel";
 import Display from "./Display";
+//親となるCalculator.tsxにscssファイルをインポート
+import "./Calculator.scss";
 
 export default function Calculator(){
     //Hookを使って持たせる
@@ -13,14 +15,14 @@ export default function Calculator(){
         isNextClear: false
     })
     
-    const buttonHandler = (code: string) => {
+    const buttonHandler = (code: ButtonCode) => {
         // console.log(code)
         const nextState = calculate(code, state)
         //次の状態が決まったらその値をセットする必要
         setState(nextState);
     }
     return <div>
-        <Display />
+        <Display value={state.current}/>
         <ButtonPanel buttonHandler={buttonHandler}/>
     </div>
 }
