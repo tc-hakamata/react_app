@@ -34,7 +34,7 @@ test("sample", () => {
 test("add", () => {
     //1+2=を押したらどうなるか　初期状態を渡す
     const finalState = execCalc(["1", "+", "2", "="], makeInitState())
-    //実際には3なのでfailとなる
+    //実際には3なのでfailとなる　３にしたらpasseddになる
     expect(finalState.current).toBe("4");
     expect(finalState.operand).toBe(0);
     expect(finalState.operator).toBe(null);
